@@ -29,20 +29,21 @@ namespace Cups_To_Ounces
 
         private void convertButton_Click(object sender, EventArgs e)
         {
-            // Variables to hold cups and ounces
-            double cups, ounces;
-            // Get the number of cups.
-            if (double.TryParse(cupsTextBox.Text, out cups))
+            try
             {
+                // Variables to hold cups and ounces
+                double cups, ounces;
+                // Get the number of cups.
+                cups = double.Parse(cupsTextBox.Text);
                 // Convert the cups to ounces.
                 ounces = CupsToOunces(cups);
                 // Display the ounces.
-                ouncesLabel.Text = ounces.ToString("n1");
+                ouncesLabel.Text = ounces.ToString("n3");
             }
-            else
+            catch(Exception ex)
             {
                 // Display an error message.
-                MessageBox.Show("Enter a valid number.");
+                MessageBox.Show(ex.Message);
             }
         }
 

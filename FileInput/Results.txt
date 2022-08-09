@@ -1,0 +1,5 @@
+String of text converted to lowercase ::the quick brown fox jumped over the lazy dog. then it went to take a nap down by the bay where the watermelons grow.
+The first Word found is ::The
+The last Word found is ::grow.
+The longest Word found is ::watermelons
+The word with the most vowels is ::watermelons
