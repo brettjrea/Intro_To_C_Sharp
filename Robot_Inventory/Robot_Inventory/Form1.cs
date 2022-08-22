@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace Robot_Inventory
+
 {
     public partial class Form1 : Form
     {
