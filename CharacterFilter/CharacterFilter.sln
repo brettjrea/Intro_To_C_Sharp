@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32804.467
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharacterFilter", "CharacterFilter\CharacterFilter.csproj", "{60A23063-A99E-4CC8-B746-44B0E33B6FEE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60A23063-A99E-4CC8-B746-44B0E33B6FEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60A23063-A99E-4CC8-B746-44B0E33B6FEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60A23063-A99E-4CC8-B746-44B0E33B6FEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60A23063-A99E-4CC8-B746-44B0E33B6FEE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2DAA847C-5FF6-499D-8D90-2AD5D9872EE8}
+	EndGlobalSection
+EndGlobal

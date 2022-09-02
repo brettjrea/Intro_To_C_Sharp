@@ -4,9 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 namespace Robot_Inventory
 
 {
@@ -14,18 +17,31 @@ namespace Robot_Inventory
     {
         // List to hold Robot objects
         List<Robot> robotList = new List<Robot>();
+
         public Form1()
         {
             InitializeComponent();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-         
+           
         }
         // The GetRobotData method accepts a Robot object     
         // as an argument. It assigns the data entered by the        
         // user to the object's properties.
+        private void searchTextBox_Type(object sender, EventArgs e)
+        {
+            robotListBox.Items.Clear();
 
+            foreach (Robot robot in robotList)
+            {
+                if (robot.ToString().ToUpper().StartsWith(searchTextBox.Text))
+                {
+                    robotListBox.Items.Add(robot);
+                }
+                robotListBox.DisplayMember = "GetListing";
+            }
+        }
         private void GetRobotData(Robot robot)
         {
             // Temporary variable to hold the price.
@@ -60,7 +76,7 @@ namespace Robot_Inventory
                 robot.Mobility = "Stationary";
             }
 
-       
+
             if (wheelsRadioButton.Checked == true)
             {
                 robot.Legs = "Wheels";
@@ -80,7 +96,7 @@ namespace Robot_Inventory
             // Get the robot's specialty.
             robot.Specialty = specialtyTextBox.Text;
 
-            // Get the robot's arms.
+            // Get the robot's quantity
             if (int.TryParse(quantityTextBox.Text, out quantity))
             {
                 robot.Quantity = quantity;
@@ -133,24 +149,39 @@ namespace Robot_Inventory
         private void removeRobotButton_Click(object sender, EventArgs e)
         {
             robotListBox.Items.Remove(robotListBox.SelectedItem);
+            companyLabel.Text = "";
+            sectorLabel.Text = "";
+            modelLabel.Text = "";
+            armsLabel.Text = "";
+            mobilityLabel.Text = "";
+            legsLabel.Text = "";
+            visionLabel.Text = "";
+            hearingLabel.Text = "";
+            intelligenceLabel.Text = "";
+            specialtyLabel.Text = "";
+            priceLabel.Text = "";
+            quantityLabel.Text = "";
         }
 
         private void robotListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Get the index of the selected item.
-            int index = robotListBox.SelectedIndex;
-            companyLabel.Text = robotList[index].Company;
-            sectorLabel.Text = robotList[index].Sector;
-            modelLabel.Text = robotList[index].Model;
-            armsLabel.Text = robotList[index].Arms.ToString("g");
-            mobilityLabel.Text = robotList[index].Mobility;
-            legsLabel.Text = robotList[index].Legs;
-            visionLabel.Text = robotList[index].Vision;
-            hearingLabel.Text = robotList[index].Hearing;
-            intelligenceLabel.Text = robotList[index].Intelligence;
-            specialtyLabel.Text = robotList[index].Specialty;
-            priceLabel.Text = robotList[index].Price.ToString("c");
-            quantityLabel.Text = robotList[index].Quantity.ToString("g");
+            if (robotListBox.SelectedIndex >= 0)
+            {
+                int index = robotListBox.SelectedIndex;
+                companyLabel.Text = robotList[index].Company;
+                sectorLabel.Text = robotList[index].Sector;
+                modelLabel.Text = robotList[index].Model;
+                armsLabel.Text = robotList[index].Arms.ToString("g");
+                mobilityLabel.Text = robotList[index].Mobility;
+                legsLabel.Text = robotList[index].Legs;
+                visionLabel.Text = robotList[index].Vision;
+                hearingLabel.Text = robotList[index].Hearing;
+                intelligenceLabel.Text = robotList[index].Intelligence;
+                specialtyLabel.Text = robotList[index].Specialty;
+                priceLabel.Text = robotList[index].Price.ToString("c");
+                quantityLabel.Text = robotList[index].Quantity.ToString("g");
+            }
         }
         private void mobileButton_Click(object sender, EventArgs e)
         {
@@ -165,5 +196,25 @@ namespace Robot_Inventory
             // Close the form.
             this.Close();
         }
+
+        private void plusButton_Click(object sender, EventArgs e)
+        {
+            
+            int index = robotListBox.SelectedIndex;
+            if (robotListBox.SelectedIndex >= 0) { 
+            robotList[index].Quantity = robotList[index].Quantity + 1;
+            quantityLabel.Text = robotList[index].Quantity.ToString("g");
+            }
+
+        }
+        private void negButton_Click(object sender, EventArgs e)
+        {
+            int index = robotListBox.SelectedIndex;
+            if (robotListBox.SelectedIndex >= 0) {
+                robotList[index].Quantity = robotList[index].Quantity - 1;
+            quantityLabel.Text = robotList[index].Quantity.ToString("g");
+            }
+        }
+    
+        }
     }
-}

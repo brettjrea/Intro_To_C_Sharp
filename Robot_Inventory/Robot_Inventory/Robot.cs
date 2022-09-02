@@ -45,5 +45,11 @@ namespace Robot_Inventory
         public decimal Price { get; set; }
         // Arms property
         public int Quantity { get; set; }
+
+        public string GetListing
+        {
+            get { return string.Format(Company + " " +Sector); }
+        }
     }
+ 
 }

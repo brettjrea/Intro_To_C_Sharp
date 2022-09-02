@@ -88,6 +88,8 @@ namespace Robot_Inventory
             this.label11 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.quantityLabel = new System.Windows.Forms.Label();
+            this.quant_plus_button = new System.Windows.Forms.Button();
+            this.quant_neg_button = new System.Windows.Forms.Button();
             this.mobilityGroup.SuspendLayout();
             this.legsGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -161,11 +163,11 @@ namespace Robot_Inventory
             this.robotListBox.Name = "robotListBox";
             this.robotListBox.Size = new System.Drawing.Size(169, 388);
             this.robotListBox.TabIndex = 8;
-            this.robotListBox.Click += new System.EventHandler(this.robotListBox_SelectedIndexChanged);
+            this.robotListBox.SelectedIndexChanged += new System.EventHandler(this.robotListBox_SelectedIndexChanged);
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(12, 555);
+            this.exitButton.Location = new System.Drawing.Point(92, 611);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(169, 28);
             this.exitButton.TabIndex = 9;
@@ -402,6 +404,7 @@ namespace Robot_Inventory
             this.modelLabel.Name = "modelLabel";
             this.modelLabel.Size = new System.Drawing.Size(0, 16);
             this.modelLabel.TabIndex = 39;
+            this.modelLabel.Click += new System.EventHandler(this.negButton_Click);
             // 
             // armsLabel
             // 
@@ -567,12 +570,12 @@ namespace Robot_Inventory
             // 
             // searchTextBox
             // 
-            this.searchTextBox.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.searchTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.searchTextBox.Location = new System.Drawing.Point(326, 61);
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(169, 22);
             this.searchTextBox.TabIndex = 59;
-            this.searchTextBox.Text = "Search:";
+            this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_Type);
             // 
             // quantityTextBox
             // 
@@ -607,11 +610,35 @@ namespace Robot_Inventory
             this.quantityLabel.Size = new System.Drawing.Size(0, 16);
             this.quantityLabel.TabIndex = 63;
             // 
+            // quant_plus_button
+            // 
+            this.quant_plus_button.Location = new System.Drawing.Point(646, 532);
+            this.quant_plus_button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.quant_plus_button.Name = "quant_plus_button";
+            this.quant_plus_button.Size = new System.Drawing.Size(35, 27);
+            this.quant_plus_button.TabIndex = 64;
+            this.quant_plus_button.Text = "+";
+            this.quant_plus_button.UseVisualStyleBackColor = true;
+            this.quant_plus_button.Click += new System.EventHandler(this.plusButton_Click);
+            // 
+            // quant_neg_button
+            // 
+            this.quant_neg_button.Location = new System.Drawing.Point(608, 532);
+            this.quant_neg_button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.quant_neg_button.Name = "quant_neg_button";
+            this.quant_neg_button.Size = new System.Drawing.Size(35, 27);
+            this.quant_neg_button.TabIndex = 65;
+            this.quant_neg_button.Text = "-";
+            this.quant_neg_button.UseVisualStyleBackColor = true;
+            this.quant_neg_button.Click += new System.EventHandler(this.negButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 595);
+            this.ClientSize = new System.Drawing.Size(863, 665);
+            this.Controls.Add(this.quant_neg_button);
+            this.Controls.Add(this.quant_plus_button);
             this.Controls.Add(this.quantityLabel);
             this.Controls.Add(this.label25);
             this.Controls.Add(this.label11);
@@ -739,6 +766,8 @@ namespace Robot_Inventory
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label quantityLabel;
+        private System.Windows.Forms.Button quant_plus_button;
+        private System.Windows.Forms.Button quant_neg_button;
     }
 }
 
