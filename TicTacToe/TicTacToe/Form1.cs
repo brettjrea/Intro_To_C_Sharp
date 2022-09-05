@@ -82,7 +82,7 @@ namespace TicTacToe
                     YWin = true;
                 }
 
-                if (gameBoard[i, 0] == 1 && gameBoard[i, 1] == 1 && gameBoard[i, 2] == 1)
+                if (gameBoard[i, 0] == 1 && gameBoard[i, 1] == 1 && gameBoard[i, 2] == 1) 
                 {
                     XWin = true;
                 }
@@ -92,15 +92,15 @@ namespace TicTacToe
             //Create static Rows and iterate the columns left to right to see if any columns are three of a kind.
             for (int i = 0; i < 3; i++)
             {
-                if (gameBoard[0, i] == 0 && gameBoard[1, i] == 0 && gameBoard[2, i] == 0)
-                {
-                    YWin = true;
-                }
+            if (gameBoard[0, i] == 0 && gameBoard[1, i] == 0 && gameBoard[2, i] == 0)
+            {
+                YWin = true;
+            }
 
-                if (gameBoard[0, i] == 1 && gameBoard[1, i] == 1 && gameBoard[2, i] == 1)
-                {
-                    XWin = true;
-                }
+            if (gameBoard[0, i] == 1 && gameBoard[1, i] == 1 && gameBoard[2, i] == 1)
+            {
+                XWin = true;
+            }
             }
 
             //Create static rows and columns to make a step pattern from top left to bottom right.
@@ -126,7 +126,7 @@ namespace TicTacToe
 
 
             //Interpret the results and display.
-            if (XWin != true && YWin != true)
+            if (XWin != true && YWin != true || XWin == true && YWin == true)
                 winLbl.Text = "Draw!";
 
             else if (XWin == true)

@@ -23,7 +23,7 @@ namespace CharacterFilter
         {
             listBox1.DataSource = null;
             listBox1.DataSource = CharactersList;
-            listBox1.DisplayMember = "Name";
+            listBox1.DisplayMember = "GetUserDetails";
         }
 
         Characters char1 = new Characters("Knight", "Human", 45, 1);

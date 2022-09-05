@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Robots>
+ <robot>
+  <RobotID>1</RobotID>
+  <Company>Honda</Company>
+  <Sector>Medical</Sector>
+  <Model>G500</Model>
+  <Arms>5</Arms>
+  <Mobility>Mobile</Mobility>
+  <Legs>Wheels</Legs>
+  <Vision>Eyes</Vision>
+  <Hearing>Ears</Hearing>
+  <Intelligence>AI</Intelligence>
+  <Specialty>Surgery</Specialty>
+  <Quantity>5</Quantity>
+  <Price>5</Price>
+ </robot>
+ <robot>
+  <RobotID>2</RobotID>
+  <Company>Toyota</Company>
+  <Sector>Environmental</Sector>
+  <Model>Prius</Model>
+  <Arms>5</Arms>
+  <Mobility>Mobile</Mobility>
+  <Legs>Wheels</Legs>
+  <Vision>LiDar</Vision>
+  <Hearing>Microphone</Hearing>
+  <Intelligence>Machine Learning</Intelligence>
+  <Specialty>Sanitation</Specialty>
+  <Quantity>5</Quantity>
+  <Price>500</Price>
+ </robot>
+</Robots>
