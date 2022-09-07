@@ -2,13 +2,15 @@
 //use for IC08
 //Lydia's code
 
-/*Unneccessary directives
+/*directives unnecessary on Visual Studio 2022
+but needed them for it to work on Github Codespaces.*/
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-*/
+
+
 namespace CST117_IC08_console
 {
     class Program
